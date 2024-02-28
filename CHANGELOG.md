@@ -11,5 +11,6 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - Introduce KCAL color control
+- Add and Set BBR as default tcp congestion
 - Enable Pstore lz4 compression
 - More improvements under the hood
