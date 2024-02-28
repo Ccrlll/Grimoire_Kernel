@@ -11,3 +11,5 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - Introduce KCAL color control
+- Enable Pstore lz4 compression
+- More improvements under the hood
