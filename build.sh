@@ -65,7 +65,8 @@ completion()
 	cd ${objdir}
 	COMPILED_IMAGE=arch/arm64/boot/Image
 	COMPILED_DTBO=arch/arm64/boot/dtbo.img
-	if [[ -f ${COMPILED_IMAGE} && ${COMPILED_DTBO} ]]; then
+	COMPILED_DTB=arch/arm64/boot/dtb.img
+	if [[ -f ${COMPILED_IMAGE} && ${COMPILED_DTBO} && ${COMPILED_DTB} ]]; then
 
 		echo -e ${LGR} "#### build completed successfully (hh:mm:ss) ####"
 	else
