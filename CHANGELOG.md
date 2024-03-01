@@ -7,10 +7,11 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Initial project setup
 
-## [Clover] - 2024 - 02 - 27
+## [Clover] - 2024 - 03 - 02
 
 ### Added
 - Introduce KCAL color control
 - Add and Set BBR as default tcp congestion
 - Enable Pstore lz4 compression
+- Added Undervolt
 - More improvements under the hood
