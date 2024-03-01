@@ -226,6 +226,8 @@ $(KBUILD_DTBO_IMG): dtbs
 	$(Q)$(MAKE) $(build)=$(boot) $(boot)/$@
 
 all: $(KBUILD_DTBO_IMG)
+$(KBUILD_DTB_IMG): dtbs
+	$(Q)$(MAKE) $(build)=$(boot) $(boot)/$@
 
 all: $(KBUILD_DTB_IMG)
 endif
