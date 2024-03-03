@@ -14,6 +14,6 @@ All notable changes to this project will be documented in this file.
 - Introduce KCAL color control
 - Add and Set BBR as default tcp congestion
 - Enable Pstore lz4 compression
-- Added Undervolt
+- Added GPU Undervolt
 - Optimize policy update loop on input boost
 - More improvements under the hood
