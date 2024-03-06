@@ -17,3 +17,8 @@ All notable changes to this project will be documented in this file.
 - Added GPU Undervolt
 - Optimize policy update loop on input boost
 - More improvements under the hood
+
+## [Clover] - 2024 - 03 - 06
+
+### Added
+- Upstream KernelSU 11591
