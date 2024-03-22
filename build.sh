@@ -7,15 +7,12 @@ CCACHE=$(command -v ccache)
 objdir="${kernel_dir}/out"
 builddir="${kernel_dir}/build"
 ZIMAGE=$kernel_dir/out/arch/arm64/boot/Image
-kernel_name="Grimoire_Kernel_Vayu"
-zip_name="$kernel_name-$(date +"%d%m%Y-%H%M").zip"
 TC_DIR=$HOME/tc
 CLANG_DIR=$HOME/tc/clang-latest
 export CONFIG_FILE="vayu_user_defconfig"
 export ARCH="arm64"
 export KBUILD_BUILD_HOST=ccrlll
 export KBUILD_BUILD_USER=home
-
 export PATH="$CLANG_DIR/bin:$PATH"
 
 if ! [ -d "$CLANG_DIR" ]; then
