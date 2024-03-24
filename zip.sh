@@ -37,5 +37,5 @@ if [[ -f $out/Image && -f $out/dtbo.img && -f $out/dtb.img ]]; then
 elif [[ -f $out/Image && -f $out/dtbo.img ]]; then
     copy_and_zip "$out/Image" "$out/dtbo.img"
 else
-    echo ${LRD}"Images not found, Aborting..." ${NC}
+    echo -e ${LRD}"Images not found, Aborting..." ${NC}
 fi
