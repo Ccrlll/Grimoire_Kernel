@@ -15,15 +15,15 @@ copy_and_zip() {
     # Copy new files
     echo "Copying files to $anykernel dir..."
     cp -f "${files_to_copy[@]}" $anykernel
-    echo ${LGR} "Successful copying files..." ${NC}
+    echo -e ${LGR}"Successful copying files..." ${NC}
 
     # Create zip file
     echo "Making zip file..."
-    zip -r "$anykernel/$kernel_name-$(date +"%Y%m%d").zip" "$anykernel/*"
-    echo ${LGR} "Success! output is on $anykernel" ${NC}
+    cd "$anykernel" && zip -r "$kernel_name-$(date +"%Y%m%d").zip" *
+    echo -e ${LGR}"Success! output is on $anykernel" ${NC}
 }
 
-kernel_name="Your_Kernel_Name" # Change to your kernel name.
+kernel_name="GrimoireKernel" # Change to your kernel name.
 anykernel="../AnyKernel3" # Change this based on your AnyKernel directory.
 out="out/arch/arm64/boot"
 
@@ -37,5 +37,5 @@ if [[ -f $out/Image && -f $out/dtbo.img && -f $out/dtb.img ]]; then
 elif [[ -f $out/Image && -f $out/dtbo.img ]]; then
     copy_and_zip "$out/Image" "$out/dtbo.img"
 else
-    echo ${LRD} "Images not found, Aborting..." ${NC}
+    echo ${LRD}"Images not found, Aborting..." ${NC}
 fi
