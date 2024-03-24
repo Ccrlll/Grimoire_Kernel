@@ -25,20 +25,19 @@ fi
 
 # Colors
 NC='\033[0m'
-RED='\033[0;31m'
 LRD='\033[1;31m'
 LGR='\033[1;32m'
 
 make_defconfig()
 {
 	START=$(date +"%s")
-	echo -e ${LGR} "########### Generating Defconfig ############${NC}"
+	echo -e ${LGR}"########### Generating Defconfig ############"${NC}
 	make -s ARCH=${ARCH} O=${objdir} ${CONFIG_FILE} -j$(nproc --all)
 }
 compile()
 {
 	cd ${kernel_dir}
-	echo -e ${LGR} "######### Compiling kernel #########${NC}"
+	echo -e ${LGR}"######### Compiling kernel #########"${NC}
 	make -j$(nproc --all) \
 	O=out \
 	ARCH=${ARCH}\
@@ -64,13 +63,23 @@ completion()
 	COMPILED_DTBO=arch/arm64/boot/dtbo.img
 	COMPILED_DTB=arch/arm64/boot/dtb.img
 	if [[ -f ${COMPILED_IMAGE} && ${COMPILED_DTBO} && ${COMPILED_DTB} ]]; then
-
-		echo -e ${LGR} "#### build completed successfully (hh:mm:ss) ####"
+		echo -e ${LGR}"#### build completed successfully (hh:mm:ss) ####"${NC}
 	else
-		echo -e ${RED} "#### failed to build some targets (hh:mm:ss) ####"
+		echo -e ${LRD}"#### failed to build some targets (hh:mm:ss) ####"${NC}
+	fi
+}
+zipping()
+{
+	cd ${kernel_dir}
+	if [ -f "zip.sh" ]; then
+		chmod +x zip.sh
+		./zip.sh
+	else
+		echo -e ${LRD}"Skipping:${NC} zip.sh do not exist"
 	fi
 }
 make_defconfig
 compile
 completion
+zipping
 cd ${kernel_dir}
