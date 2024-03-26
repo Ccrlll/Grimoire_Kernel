@@ -13,13 +13,15 @@
 
 #define SDE_HW_KCAL_ENABLED		(1)
 
-#define SDE_HW_KCAL_MIN_VALUE		(20)
-#define SDE_HW_KCAL_INIT_RED		(256)
-#define SDE_HW_KCAL_INIT_GREEN		(256)
-#define SDE_HW_KCAL_INIT_BLUE		(256)
+#define SDE_HW_KCAL_MIN_VALUE		(35)
+#define SDE_HW_KCAL_INIT_RED		(225)
+#define SDE_HW_KCAL_INIT_GREEN		(225)
+#define SDE_HW_KCAL_INIT_BLUE		(237)
 
 #define SDE_HW_KCAL_INIT_HUE		(0)
-#define SDE_HW_KCAL_INIT_ADJ		(255)
+#define SDE_HW_KCAL_INIT_SAT		(277)
+#define SDE_HW_KCAL_INIT_VAL		(250)
+#define SDE_HW_KCAL_INIT_CON		(264)
 
 struct sde_hw_kcal_pcc {
 	u32 red;
